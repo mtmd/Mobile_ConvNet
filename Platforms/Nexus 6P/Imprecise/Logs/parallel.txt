@@ -1,0 +1,24 @@
+Loading Parameters from SD Card (ms):	228
+Prob from parallel (ms)	0
+Loading Parameters from SD Card (ms):	147
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	145
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	148
+Prob from parallel (ms)	0
+Loading Parameters from SD Card (ms):	136
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	235
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	230
+Prob from parallel (ms)	0
+Loading Parameters from SD Card (ms):	232
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	130
+Prob from parallel (ms)	0
+Loading Parameters from SD Card (ms):	128
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	237
+Prob from parallel (ms)	1
+Loading Parameters from SD Card (ms):	131
+Prob from parallel (ms)	0

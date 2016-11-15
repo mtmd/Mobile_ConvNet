@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SqueezeNet_DSE</string>
+    <string name="lbl">Current Task:</string>
+    <string name="startBtnText">Start</string>
+</resources>
