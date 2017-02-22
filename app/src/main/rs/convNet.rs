@@ -1,7 +1,7 @@
 #pragma version(1)
 #pragma rs java_package_name(com.example.mmota.squeezenet_dse)
 //#pragma rs_fp_relaxed
-#pragma rs_fp_imprecise
+//#pragma rs_fp_imprecise
 
 
 int32_t K;
@@ -141,6 +141,47 @@ float __attribute__((kernel)) conv_1(uint32_t x) {
 	rsSetElementAt_float(output, out0, base3);
 
 }
+
+float __attribute__((kernel)) conv_2(uint32_t x) {
+	int32_t w = (x / 4) % Wout;
+	int32_t h = (((x - 4 * w) / 4) / Wout) % Hout;
+	int32_t m = (x % 4) + (x / (4 * Wout * Hout)) * 4;
+
+	int32_t n, i, j;
+
+	float out0 = rsGetElementAt_float(bias, m);
+	float out1 = rsGetElementAt_float(bias, m + parallelOFMs);
+
+	int32_t base1 = K * K * N_new;
+	for (n = 0; n < N_new; n++){
+		for (i = 0; i < K; i++){
+			for (j = 0; j < K; j++){
+				if (w*S + i - pad<0 || w*S + i - pad >= Win ||h*S + j - pad<0 || h*S + j - pad >= Hin) continue;
+				int32_t base2 = (i) + (K * j) + (K * K * n);
+
+				float4 ifm = rsGetElementAt_float4(in, (w * S + i - pad) + Win * (h * S + j - pad) + (Win * Hin * n));
+
+				float4 wght0 = rsGetElementAt_float4(weight, base2 + (base1 * m));
+				out0 += dot(ifm, wght0);
+
+				float4 wght1 = rsGetElementAt_float4(weight, base2 + (base1 * (m + parallelOFMs)));
+				out1 += dot(ifm, wght1);
+
+			}
+		}
+	}
+
+	int32_t base3 = offset + x;
+	int32_t base4 = Wout * Hout * parallelOFMs;
+
+	out0 = fmax(0.0f, out0);
+	rsSetElementAt_float(output, out0, base3);
+
+	out1 = fmax(0.0f, out1);
+	rsSetElementAt_float(output, out1, base3 + base4);
+
+}
+
 float __attribute__((kernel)) conv_4(uint32_t x) {
 	int32_t w = (x / 4) % Wout;
 	int32_t h = (((x - 4 * w) / 4) / Wout) % Hout;
