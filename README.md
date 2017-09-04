@@ -5,3 +5,8 @@ As the documentation overlaps with the content of the paper, we will publish the
 
 ## Email
 mmotamedi@ucdavis.edu
+## Citing
+If this project helped your research, please kindly cite our work.
+```
+Motamedi, Mohammad, Daniel Fong, and Soheil Ghiasi. "Cappuccino: Efficient Inference Software Synthesis for Mobile System-on-Chips." arXiv preprint arXiv:1707.02647 (2017).
+```
