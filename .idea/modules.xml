@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SqueezeNet_DSE.iml" filepath="$PROJECT_DIR$/SqueezeNet_DSE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mobile_ConvNet.iml" filepath="$PROJECT_DIR$/Mobile_ConvNet.iml" />
+      <module fileurl="file://C:\CodeBase\Mobile_ConvNet\SqueezeNet_DSE.iml" filepath="C:\CodeBase\Mobile_ConvNet\SqueezeNet_DSE.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\CodeBase\Mobile_ConvNet\app\app.iml" filepath="C:\CodeBase\Mobile_ConvNet\app\app.iml" />
     </modules>
   </component>
 </project>
